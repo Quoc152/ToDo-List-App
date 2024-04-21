@@ -127,16 +127,18 @@ function addItem(e) {
         completed: false
     };
 
+    
+
     // Lưu mục công việc mới vào local storage
     let toDoList = JSON.parse(localStorage.getItem('toDoList')) || [];
     toDoList.push(newItem);
     localStorage.setItem('toDoList', JSON.stringify(toDoList));
 
+    location.reload();
+
     const item = document.createElement('div');
     item.classList.add('item');
     item.dataset.itemId = id;
-
-
 
     const item_content = document.createElement('div');
     item_content.classList.add('content');
